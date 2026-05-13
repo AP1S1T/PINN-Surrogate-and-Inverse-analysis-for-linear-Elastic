@@ -23,7 +23,7 @@ This project addresses a **quarter-domain tunnel problem**: a 4 m × 4 m region 
 *Physics-Informed Neural Network architecture: the network takes spatial coordinates (x, y) as input and outputs displacements (u, v), with PDE residuals and boundary conditions enforced through the loss function.*
 
 ### Collocation Points
-![Collocation Points](image__1_.png)
+![Collocation Points](image(1)_.png)
 *Adaptive collocation point distribution over the quarter-domain. Points are sampled with higher density near the curved tunnel wall (x² + y² = 1) where stress gradients are largest.*
 
 ### PINN vs FEM Stress Comparison
