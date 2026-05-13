@@ -19,7 +19,7 @@ This project addresses a **quarter-domain tunnel problem**: a 4 m × 4 m region 
 ## Results
 
 ### PINN Architecture & Training
-![PINN Architecture](diagram-20260503.png)
+![PINN Architecture](diagram-20260513.png)
 *Physics-Informed Neural Network architecture: the network takes spatial coordinates (x, y) as input and outputs displacements (u, v), with PDE residuals and boundary conditions enforced through the loss function.*
 
 ### Collocation Points
