@@ -18,12 +18,16 @@ This project addresses a **quarter-domain tunnel problem**: a 4 m × 4 m region 
 
 ## Results
 
+### Problem Domain & Boundary Conditions
+![Problem Setup](diagram-20260514.png)
+*Quarter-domain tunnel problem: 4 m × 4 m region with a circular tunnel cutout (R = 1 m) in the lower-left corner. A uniform compressive load of P = 120 kPa is applied on the top edge. Symmetry conditions (u_x = 0, σ_xy = 0) are enforced on the left and right boundaries, vertical roller (u_y = 0) on the bottom, and traction-free conditions (σ_n = 0, τ_n = 0) on the curved tunnel wall.*
+
 ### PINN Architecture & Training
 ![PINN Architecture](diagram-20260513.png)
-*Physics-Informed Neural Network architecture: the network takes spatial coordinates (x, y) as input and outputs displacements (u, v), with PDE residuals and boundary conditions enforced through the loss function.*
+*Physics-Informed Neural Network architecture: the network takes spatial coordinates (x, y) and material parameters (E, ν) as inputs and outputs displacements (u_x, u_y). Automatic differentiation computes strain and stress fields, which are used to evaluate the PDE equilibrium residuals (red) and boundary condition losses (yellow). Network weights are updated iteratively until the L₂ loss converges below tolerance ε.*
 
 ### Collocation Points
-![Collocation Points](image_1.png)
+![Collocation Points](image__1_.png)
 *Adaptive collocation point distribution over the quarter-domain. Points are sampled with higher density near the curved tunnel wall (x² + y² = 1) where stress gradients are largest.*
 
 ### PINN vs FEM Stress Comparison
@@ -156,7 +160,8 @@ GPU is automatically used if available (`torch.device("cuda")`).
 ├── Inverse_analysis.ipynb                   # Inverse PINN for E, ν recovery
 ├── surrogate_weights/                       # Auto-created; stores trained weight archives
 │   └── surrogate_archive.pth
-├── diagram-20260503.png                     # PINN architecture diagram
+├── diagram-20260514.png                     # Problem domain & boundary conditions
+├── diagram-20260513.png                     # PINN architecture & training flowchart
 ├── image__1_.png                            # Collocation point distribution
 └── image.png                               # PINN vs FEM stress comparison
 ```
