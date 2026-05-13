@@ -206,6 +206,6 @@ GPU is automatically used if available (`torch.device("cuda")`).
 
 - Apisit Robjanghvad  
 - Panatouch Thong-ou  
-- Siriporn PANTAN  
-- PHAKHIN KHAOWONG
+- Siriporn Pantan
+- Phakhin Khaowong
 
