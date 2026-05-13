@@ -201,3 +201,11 @@ GPU is automatically used if available (`torch.device("cuda")`).
 
 - Raissi, M., Perdikaris, P., & Karniadakis, G. E. (2019). Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations. *Journal of Computational Physics*, 378, 686–707.
 - Haghighat, E., Raissi, M., Moure, A., Gomez, H., & Juanes, R. (2021). A physics-informed deep learning framework for inversion and surrogate modeling in solid mechanics. *Computer Methods in Applied Mechanics and Engineering*, 379, 113741.
+
+## Authors
+
+- Apisit Robjanghvad  
+- Panatouch Thong-ou  
+- Siriporn PANTAN  
+- PHAKHIN KHAOWONG
+
