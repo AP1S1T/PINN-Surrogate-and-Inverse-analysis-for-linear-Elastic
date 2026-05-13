@@ -27,7 +27,7 @@ This project addresses a **quarter-domain tunnel problem**: a 4 m × 4 m region 
 *Physics-Informed Neural Network architecture: the network takes spatial coordinates (x, y) and material parameters (E, ν) as inputs and outputs displacements (u_x, u_y). Automatic differentiation computes strain and stress fields, which are used to evaluate the PDE equilibrium residuals (red) and boundary condition losses (yellow). Network weights are updated iteratively until the L₂ loss converges below tolerance ε.*
 
 ### Collocation Points
-![Collocation Points](image__1_.png)
+![Collocation Points](image_1.png)
 *Adaptive collocation point distribution over the quarter-domain. Points are sampled with higher density near the curved tunnel wall (x² + y² = 1) where stress gradients are largest.*
 
 ### PINN vs FEM Stress Comparison
