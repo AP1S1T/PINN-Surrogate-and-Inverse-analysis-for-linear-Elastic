@@ -16,6 +16,22 @@ This project addresses a **quarter-domain tunnel problem**: a 4 m × 4 m region 
 
 ---
 
+## Results
+
+### PINN Architecture & Training
+![PINN Architecture](diagram-20260503.png)
+*Physics-Informed Neural Network architecture: the network takes spatial coordinates (x, y) as input and outputs displacements (u, v), with PDE residuals and boundary conditions enforced through the loss function.*
+
+### Collocation Points
+![Collocation Points](image__1_.png)
+*Adaptive collocation point distribution over the quarter-domain. Points are sampled with higher density near the curved tunnel wall (x² + y² = 1) where stress gradients are largest.*
+
+### PINN vs FEM Stress Comparison
+![Stress Field Comparison](image.png)
+*Stress field comparison between PINN predictions (left) and FEM reference solution (middle), with relative error maps (right) for σ_xx, σ_yy, and σ_xy. The PINN achieves low relative errors across the domain, with slightly higher errors near the stress concentration at the tunnel wall.*
+
+---
+
 ## Problem Setup
 
 **Domain:** Quarter-disk annulus, x ∈ [0, 4] m, y ∈ [0, 4] m, with the circular tunnel hole x² + y² < R² removed.
@@ -138,8 +154,11 @@ GPU is automatically used if available (`torch.device("cuda")`).
 ├── Deep_Tunnel.ipynb                        # Baseline single-case PINN
 ├── Parametric_Surrogate_DeepTunnel.ipynb    # Surrogate via weight interpolation
 ├── Inverse_analysis.ipynb                   # Inverse PINN for E, ν recovery
-└── surrogate_weights/                       # Auto-created; stores trained weight archives
-    └── surrogate_archive.pth
+├── surrogate_weights/                       # Auto-created; stores trained weight archives
+│   └── surrogate_archive.pth
+├── diagram-20260503.png                     # PINN architecture diagram
+├── image__1_.png                            # Collocation point distribution
+└── image.png                               # PINN vs FEM stress comparison
 ```
 
 ---
